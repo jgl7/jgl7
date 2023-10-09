@@ -1,0 +1,151 @@
+    1  cd /
+    2  ls
+    3  ls
+    4  ls
+    5  ls
+    6  ls
+    7  ls /e
+    8  ls /c
+    9  /User
+   10  ls /User
+   11  ls /d
+   12  ls /picture
+   13  ls /d/picture
+   14  cp /d/picture
+   15  cd/
+   16  cd /
+   17  ls /
+   18  cd /d/picture
+   19  cd..
+   20  cd cd.
+   21  cd.. /
+   22  cd. /
+   23  pwd
+   24  cd /e
+   25  pwd
+   26  cd..
+   27  cd.
+   28  cd.. /
+   29  cd. /
+   30  cd ..
+   31  cd /d/picture
+   32  ls 
+   33  ls()
+   34  ls //
+   35  touch a.txt
+   36  ls
+   37  rm a.txt 
+   38  ls
+   39  mkdir a
+   40  ls
+   41  cd a
+   42  cd..
+   43  cd .
+   44  cd ..
+   45  rm a
+   46  rm a/
+   47  rm -r a
+   48  ls
+   49  mkdir a
+   50  mv 狗.jpg src a
+   51  mv 狗.jpg a dog.jpg
+   52  mv 狗.jpg a 狗.jpg
+   53  mv 狗.jpg a 
+   54  cp a/狗.jpg
+   55  cp a/狗.jpg picture
+   56  ls
+   57  help
+   58  clear
+   59  history
+   60  git config -l
+   61  cp a/狗.jpg picture
+   62  git config --list
+   63  git config --global user.name jgl
+   64  git config --global user.email 2766241096@qq.com
+   65  git config --list
+   66  cd desktop
+   67  cd deskTop
+   68  cd
+   69  cd
+   70  cd /d/picture
+   71  cd /c
+   72  cd /User
+   73  /User
+   74  cd c/User/lenovo/OneDrive/江冠龙
+   75  cd c/Users/lenovo/OneDrive/江冠龙
+   76  cd /c/Users/lenovo/OneDrive/江冠龙
+   77  ls
+   78  图片
+   79  ls /图片
+   80  ls 图片
+   81  cd 图片
+   82  cp 佩奇.jpg /风景
+   83  cp 佩奇.jpg 风景
+   84  cp 佩奇.jpg 风景
+   85  clear
+   86  history
+   87  mv 佩奇.jpg /图片
+   88  cd 风景
+   89  mv 佩奇.jpg /图片
+   90  mv /图片/佩奇.jpg 
+   91  mv /图片/佩奇.jpg 风景
+   92  mv /图片/佩奇.jpg 佩奇.jpg
+   93  mv /图片/佩奇.jpg pwd
+   94  pwd
+   95  cd ..
+   96  mv /图片/佩奇.jpg 风景
+   97  mv 风景/佩奇.jpg 图片
+   98  cd 风景
+   99  mv 佩奇.jpg 图片
+  100  mv 佩奇.jpg 图片
+  101  cd..
+  102  cd ..
+  103  mv 狗.jpg 风景
+  104  history 
+  105  history 
+  106  pwd
+  107  cd 江冠龙
+  108  ls
+  109  history 
+  110  pwd
+  111  OneDrive
+  112  cd OneDrive
+  113  cd 江冠龙
+  114  ls
+  115  cd html
+  116  touch 20213656江冠龙.txt
+  117  history >20213656江冠龙.txt 
+  118  cd..
+  119  cd ..'
+
+
+
+
+cd ..
+
+
+
+
+
+clear
+/
+>
+'
+  120  cd ..
+  121  图片
+  122  cd 图片
+  123  cp 风景/佩奇.jpg 
+  124  cp 风景/佩奇.jpg 图片
+  125  cp 风景/佩奇.jpg 图片/
+  126  cp 风景/佩奇.webp 图片/
+  127  cp 风景/佩奇.webp 图片
+  128  cp 狗.jpg 风景
+  129  mv 狗.jpg 风景
+  130  cp 风景/狗.jpg 图片/
+  131  cp 风景/狗.jpg 图片
+  132  cp 风景/狗.jpg 图片
+  133  cp 风景/狗.jpg 图片/狗.jpg
+  134  cp 风景/狗.jpg 图片
+  135  cd ..
+  136  cd html
+  137  history >20213656江冠龙.txt 

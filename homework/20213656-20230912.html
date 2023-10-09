@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>实验报告</title>
+</head>
+<body>
+<h1>实验报告</h1>
+
+<h2>简介</h2>
+<p>通过简单的git bush命令在进行文件的解压，删除，列举的操作。</p>
+
+<h2>命令</h2>
+<ul>
+    <li>第一步：下载文件到个人文件夹</li>
+    <li>第二步：用tar -xf命令来解压videoClips包文件</li>
+    <li>第三步：删除下载的包文件，并列出解包的文件</li>
+</ul>
+<h2>视频</h2>
+<div id = "video-container"></div>
+<script>
+    var videoFolderPath = "D:\Git\jgl\videoMP4";
+    var videoFiles = ["videoMP4.mp4"];
+    function createVideoPlayer(videoFile) {
+        var videoElement = document.createElement("video");
+        videoElement.src = videoFolderPath + videoFile;
+        videoElement.controls = true;
+        videoElement.width = 630;
+        videoElement.height = 350;
+
+        var videoContainer = document.getElementById("video-container");
+        videoContainer.appendChild(videoElement);
+    }
+    for (var i = 0; i < videoFiles.length; i++) {
+        createVideoPlayer(videoFiles[i]);
+    }
+</script>
+
+<h2>总结</h2>
+<p>经过本次的实验操作，初步掌握相应的git bush命令来进行一系列文件操作，包括解包，删除包文件和列举解包后的文件。</p>
+
+</body>
