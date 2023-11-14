@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyVideo</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        button {
+            margin-left: 10px;
+            width: 50px;
+            font-size: 25px;
+            background-color: transparent;
+            border: 0;
+        }
+
+        button:hover {
+            background-color: aliceblue;
+        }
+
+        input {
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 40px;
+            width: 100px;
+        }
+
+        #xuanji {
+            height: 25px;
+            width: 300px;
+        }
+
+        div#showTime {
+            left: 0;
+            top: 10px;
+            ;
+            background-color: aquamarine;
+            font-size: 50px;
+            color: black;
+            width: 150px;
+            height: 70px;
+            position: absolute;
+            padding: 4px 5px;
+        }
+
+        div#logo {
+            right: 0;
+            top: 10px;
+            ;
+            background-color: aquamarine;
+            font-size: 50px;
+            color: black;
+            width: 220px;
+            height: 70px;
+            position: absolute;
+            padding: 4px 5px;
+        }
+
+        div#controls {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+    <script></script>
+</head>
+
+<body>
+    <div id="UI">
+        <div id="showTime"></div>
+        <div id="logo">
+            no.
+        </div>
+        <video controls id="myvideo"></video><br>
+        <div id="controls">
+            <button id="play">▶️</button>
+            <button id="pause">⏸</button>
+            <button id="last">⏮</button>
+            <button id="next">⏭</button> <br>
+        </div>
+        <!-- 时间<input type="text" id="ctime" value="0"> -->
+        选集<input type="text" id="xuanji" value="1"> <br>
+        <div id="duration"></div>
+    </div>
+    <script>
+        var mp4 = ["2013东西方2马的交锋.mp4",
+            "funDogs.mp4",
+            "上瘾.mp4",
+            "世界冠军江西弃婴.mp4",
+            "农民吹牛.mp4",
+            "逗八哥狗.mp4"];
+        var Moddel=[];
+        Moddel.Ui=[];
+        Moddel.Ui.myvideo=document.getElementById("myvideo");
+        Moddel.i = 0;
+        Moddel.Ui.myvideo.src = "videoMP4/" + mp4[Moddel.i];
+        Moddel.Ui.showTimeDemo = document.getElementById("showTime");
+        Moddel.Ui.xuanjidemo = document.getElementById("xuanji");
+        Moddel.Ui.logodemo = document.getElementById("logo");
+        Moddel.Ui.durationDom=document.getElementById("duration");
+        //设置视频宽度
+        Moddel.Ui.myvideo.style.width = document.body.clientWidth + 'px';
+        //设置时间
+        window.setInterval(function () {
+            let showTimeDemo=Moddel.Ui.showTimeDemo;
+            let myvideo=Moddel.Ui.myvideo;
+            showTimeDemo.textContent = parseInt(myvideo.currentTime) + ' s';
+        })
+        //按钮
+        Moddel.Ui.play=document.getElementById("play");
+        Moddel.Ui.pause=document.getElementById("pause");
+        Moddel.Ui.last=document.getElementById("last");
+        Moddel.Ui.next=document.getElementById("next");
+        //play
+        Moddel.Ui.play.onclick = function () {
+            let xuanjidemo=Moddel.Ui.xuanjidemo;
+            
+            if (!parseInt(xuanjidemo.value)) {
+                xuanjidemo.value = 1;
+                console.log("选集!!!");
+            }
+            if (parseInt(xuanjidemo.value) > mp4.length) { xuanjidemo.value = mp4.length; console.log("选集>!!!"); }
+            if (parseInt(xuanjidemo.value) < 1) { Moddel.i = 0; console.log("选集<!!!"); }
+            if (Moddel.i != parseInt(xuanjidemo.value) - 1) {
+                Moddel.i = parseInt(xuanjidemo.value) - 1;
+                Moddel.Ui.myvideo.src = "videoMP4/" + mp4[Moddel.i];
+            }
+            Moddel.Ui.logodemo.textContent = 'no.' + (Moddel.i + 1) + '/' + mp4.length;
+            Moddel.Ui.myvideo.play();
+        }
+        //pause
+        Moddel.Ui.pause.onclick = function () {
+            Moddel.Ui.myvideo.pause();
+        }
+        //last
+        Moddel.Ui.last.onclick = function () {
+            let i=Moddel.i;
+            i = parseInt(Moddel.Ui.xuanjidemo.value) - 1;
+            i--;
+            if (i == -1) i = mp4.length - 1;
+            Moddel.Ui.myvideo.src = "videoMP4/" + mp4[i];
+            Moddel.Ui.xuanjidemo.value = i + 1;
+            Moddel.Ui.logodemo.textContent = 'no.' + (i + 1) + '/' + mp4.length;
+            Moddel.Ui.myvideo.play();
+            Moddel.i=i;
+        }
+        //next
+        Moddel.Ui.next.onclick = function () {
+            let i=Moddel.i;
+            i = parseInt(Moddel.Ui.xuanjidemo.value) - 1;
+            i++;
+            if (i == mp4.length) i = 0;
+            Moddel.Ui.myvideo.src = "videoMP4/" + mp4[i];
+            Moddel.Ui.xuanjidemo.value = i + 1;
+            Moddel.Ui.logodemo.textContent = 'no.' + (i + 1) + '/' + mp4.length;
+            Moddel.Ui.myvideo.play();
+            Moddel.i=i;
+        }
+        //九个时间按钮
+        Moddel.Ui.durationDom.item = [];
+        for (let i = 0; i < 9; i++) {
+            let tempDom = document.createElement("input");
+            tempDom.type = "button";
+            tempDom.value = "NO." + (i + 1);
+            Moddel.Ui.durationDom.item[i] = tempDom;
+            Moddel.Ui.durationDom.appendChild(Moddel.Ui.durationDom.item[i]);
+        }
+        for (let i = 0; i < 9; i++) {
+            Moddel.Ui.durationDom.item[i].onclick = function () {
+                Moddel.Ui.myvideo.currentTime = i * (Moddel.Ui.myvideo.duration / 9);
+            }
+        }
+    </script>
+</body>
+
+</html>
