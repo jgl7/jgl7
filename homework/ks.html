@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="CN">
 
 <head>
   <meta charset="UTF-8">
@@ -96,7 +96,7 @@
     #main{
       width: 100%;
     position: absolute;
-    top: 273px;
+    top: 364px;
     }
   </style>
   <script src="ks.js">
@@ -108,6 +108,7 @@
 <body>
   <div class="container">
     <div class="title">
+      <h1 style="text-align: center;">江冠龙的自学系统</h1>
       <div class="imgs">
         <img class="img" src="images/李老师.jpg" alt="">
         <img class="img" src="images/刘盛.jpg" alt="">
@@ -145,6 +146,9 @@
         <button id="switch">视频</button>
         <div id="a_title"></div>
       </div>
+      <h2>江西科技师范大学<br>
+      JAVA二班<br>
+    第六小组：刘盛 江冠龙 周志能 吴艳祺 高翔</h2>
     </div>
   </div>
   <script>
@@ -178,12 +182,16 @@
       prev: function () {
         Model.i--;
         let i = Model.i;
+        if (i == -1) 
+            Model.i = mediaData.videoFileNames.length-1;
         Model.loadMedia();
         Model.play();
       },
       next: function () {
         Model.i++;
         let i = Model.i;
+        if (i == mediaData.videoFileNames.length) 
+            Model.i=0;
         Model.loadMedia();
         Model.play();
       },
@@ -277,13 +285,16 @@
           Model.next();
         };
         Model.UI.switchDom.onclick = function () {
+          Model.pause();
           Model.i = 0;
 
           Model.isVideo = !Model.isVideo;
           Model.UI.switchDom.textContent = Model.isVideo ? "视 频" : "音 频 ";
+          
           toggleMedia();
-          Model.pause();
+          
           Model.loadMedia();
+          
         };
 
       }//init 结束 ,
